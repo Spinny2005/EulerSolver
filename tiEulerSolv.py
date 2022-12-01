@@ -16,6 +16,7 @@ print("")
 input("    Press [Enter] to Start")
 while True:
     print("")
+    e = 2.7182818284
     y = input("Enter a y value: ")
     try: float(y)
     except ValueError: y = None;
