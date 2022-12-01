@@ -17,14 +17,16 @@ input("    Press [Enter] to Start")
 while True:
     print("")
     y = input("Enter a y value: ")
+    y = float(y)
     x = input("Enter a x value: ")
+    x = float(x)
     stepCount = input("Number of steps: ")
     stepSize = input("Step size: ")
     derivative = input('Enter dy/dx: ')
     try: eval(derivative)
     except NameError: derivative = None
     if (derivative != None):
-        if (y) and (x) and (stepCount) and (stepSize) and (derivative):
+        if (str(y)) and (str(x)) and (stepCount) and (stepSize) and (derivative):
             x = float(x)
             y = float(y)
             print('')
