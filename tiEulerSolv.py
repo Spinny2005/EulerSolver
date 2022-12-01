@@ -10,7 +10,8 @@ print("")
 print("  Remember to use proper syntax")
 print("  Use parenthesis for complex")
 print("  fractions and fractional")
-print("  expressions.")
+print("  expressions. Please convert")
+print("  cx to c*x when entering dy/dx")
 print("")
 input("    Press [Enter] to Start")
 while True:
@@ -20,7 +21,7 @@ while True:
     stepCount = input("Number of steps: ")
     stepSize = input("Step size: ")
     derivative = input('Enter dy/dx: ')
-
+    
     if (y) and (x) and (stepCount) and (stepSize) and (derivative):
         x = float(x)
         y = float(y)
