@@ -25,7 +25,7 @@ while True:
     try: float(x)
     except ValueError: x = None;
     if (x != None):
-        x = float(y)
+        x = float(x)
     stepCount = input("Number of steps: ")
     stepSize = input("Step size: ")
     derivative = input('Enter dy/dx: ')
