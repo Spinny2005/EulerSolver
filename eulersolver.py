@@ -1,4 +1,5 @@
 # Created by Spencer Boggs
+# Version adapted for TI python calculators
 import math
 
 print("")
@@ -16,43 +17,57 @@ input("    Press [Enter] to Start")
 while True:
     print("")
     y = input("Enter a y value: ")
-    y = float(y)
+    try: float(y)
+    except ValueError: y = None;
+    if (y != None):
+        y = float(y)
     x = input("Enter a x value: ")
-    x = float(x)
-    stepCount = input("Enter the number of steps: ")
-    stepSize = input("Step size: ")
-    derivative = input("Enter dy/dx: ")
-
+    try: float(x)
+    except ValueError: x = None;
+    if (x != None):
+        x = float(x)
+    stepCount = input("Number of steps: ")
+    stepSize = input("Enter step size: ")
+    derivative = input('Enter dy/dx: ')
     try: eval(derivative)
-    except NameError: derivative = None
+    except SyntaxError: derivative = None
     if (derivative != None):
-        if (str(y)) and (str(x)) and (stepCount) and (stepSize):
-            x = float(x)
-            y = float(y)
-            print('')
-
-            for i in range(int(stepCount)):
-                m = eval(derivative)
-                print("---- Step " + str(i+1) + " ----")
-                print("Slope: " + str(m))
-
-                print("y - " + str(y) + " = " + str(m) + "(x - " + str(x) + ")")
-                initialEquation = (str(m) + ' * x + ' + str(eval('(-x*m)+y')))
-
-                x = x+float(stepSize)
-                y = eval(str(initialEquation))
-
-                print('Tangent Equation ' + str(i + 1) + ': y = ' + str(initialEquation))
-                print("Y Coordinate after " + str(i+1) + " step(s): " + str(y))
+        try: eval(derivative)
+        except NameError: derivative = None
+        if (derivative != None):
+            if (str(y)) and (str(x)) and (stepCount) and (stepSize) and (derivative):
+                x = float(x)
+                y = float(y)
                 print('')
-                if (int(i+1) < int(stepCount)):
-                    input("Press [Enter] to proceed to step " + str(i+2))
-                elif (int(i+1) == int(stepCount)):
-                    input("Press [Enter] to proceed")
-                print('')        
+
+                for i in range(int(stepCount)):
+                    m = eval(derivative)
+                    print("---- Step " + str(i+1) + " ----")
+                    print("Slope: " + str(m))
+
+                    print("y - " + str(y) + " = " + str(m) + "(x - " + str(x) + ")")
+                    initialEquation = (str(m) + ' * x + ' + str(eval('(-x*m)+y')))
+
+                    x = x+float(stepSize)
+                    y = eval(str(initialEquation))
+
+                    print('Tangent Line Equation ' + str(i + 1) + ': y = ' + str(initialEquation))
+                    print("Y Coordinate after " + str(i+1) + " step(s): " + str(y))
+                    print('')
+                    if (int(i+1) < int(stepCount)):
+                        a = input("Press [Enter] to go to step " + str(i+2))
+                    elif (int(i+1) == int(stepCount)):
+                        a = input("Press [Enter] to proceed")
+                    print('')        
+            else:
+                print('Unsolvable. Double check')
+                print('your inputs.')
         else:
-            print('Unsolvable. Double check')
-            print('your inputs.')
+            print('Please enter a valid')
+            print('equation. Enter any')
+            print('multiplication with *')
+            print('Ex: cx -> c*x')
+            input("Press [Enter] to proceed")
     else:
         print('Please enter a valid')
         print('equation. Enter any')
