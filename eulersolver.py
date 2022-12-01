@@ -61,15 +61,18 @@ while True:
                         a = input("Press [Enter] to proceed")
                     print('')        
             else:
+                print('')
                 print('Unsolvable. Double check')
                 print('your inputs.')
         else:
+            print('')
             print('Please enter a valid')
             print('equation. Enter any')
             print('multiplication with *')
             print('Ex: cx -> c*x')
             input("Press [Enter] to proceed")
     else:
+        print('')
         print('Please enter a valid')
         print('equation. Enter any')
         print('multiplication with *')
