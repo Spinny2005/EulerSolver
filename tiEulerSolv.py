@@ -37,7 +37,7 @@ while True:
             x = x+float(stepSize)
             y = eval(str(initialEquation))
         
-            print('Tangent Line ' + str(i + 1) + ': y = ' + str(initialEquation))
+            print('Equation ' + str(i + 1) + ': y = ' + str(initialEquation))
             print("Y after " + str(i+1) + " step(s): " + str(y))
             print('')
             if (int(i+1) < int(stepCount)):
