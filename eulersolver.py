@@ -1,5 +1,4 @@
 # Created by Spencer Boggs
-# Version adapted for TI python calculators
 import math
 
 print("")
@@ -12,7 +11,7 @@ print("  Use parenthesis for complex")
 print("  fractions and fractional")
 print("  expressions. Please convert")
 print("  cx to c*x when entering dy/dx")
-print("  Use ** for exponents. (x**2)")
+print("  Use ** for exponents (x**2)")
 print("")
 input("    Press [Enter] to Start")
 while True:
