@@ -54,6 +54,7 @@ while True:
 
                     print('Tangent Line Equation ' + str(i + 1) + ': y = ' + str(initialEquation))
                     print("Y Coordinate after " + str(i+1) + " step(s): " + str(y))
+                    print("Coordinates: (" + str(x) + ", " + str(y) + ")")
                     print('')
                     if (int(i+1) < int(stepCount)):
                         a = input("Press [Enter] to go to step " + str(i+2))
